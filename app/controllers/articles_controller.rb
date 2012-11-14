@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article  = Article.includes(:comments).find(params[:id])
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb
